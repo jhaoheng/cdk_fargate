@@ -1,14 +1,17 @@
-# Welcome to your CDK TypeScript project!
+# Architecture
+- Use default VPC
+- ECS, Cluster, Fargate, TaskDefinition
+- ALB, Targate Group, ACM
+- Route53 use exist Hosted Zones
 
-This is a blank project for TypeScript development with CDK.
+# Prerequisite
+- Route53's Hosted Zones
+- `npm i @aws-cdk/aws-{certificatemanager,elasticloadbalancingv2,ecs,route53,ec2,route53-targets}`
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+# Deploy Steps
+1. Set DomainName = `export MyDomainName=....`
+2. `cdk deploy`
 
-## Useful commands
-
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+# Destroy Steps
+1. Set DomainName = `export MyDomainName=....`
+2. `cdk destroy`
